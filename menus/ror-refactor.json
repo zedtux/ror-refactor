@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "ROR Refactor: Extract Method",
+        "command": "ror-refactor:extract-method"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Ruby On Rails Refactor",
+          "submenu": [
+            {
+              "label": "Extract Method",
+              "command": "ror-refactor:extract-method"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ror-refactor",
+  "main": "./lib/ror-refactor",
+  "version": "0.1.0",
+  "description": "A set of refactoring tools for Ruby On Rails",
+  "keywords": [
+    "refactor",
+    "ruby",
+    "rails"
+  ],
+  "activationCommands": {
+    "atom-text-editor": [
+      "ror-refactor:extract-method"
+    ]
+  },
+  "repository": "https://github.com/zedtux/ror-refactor",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
