@@ -25,7 +25,7 @@ Or from Atom itself.
 
 Select a bunch of code then hit `CTRL + ALT + CMD + R`:
 
-<INSERT GIF HERE>
+![ror-refactor-extract-method](https://cloud.githubusercontent.com/assets/478564/17524050/2c1a4904-5e5d-11e6-9716-7f783ea37386.gif)
 
 ## Contributing
 
