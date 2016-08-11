@@ -1,6 +1,7 @@
 'use babel';
 
 import RorRefactor from '../lib/ror-refactor';
+let fs = require('fs');
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
@@ -8,66 +9,93 @@ import RorRefactor from '../lib/ror-refactor';
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe('RorRefactor', () => {
-  let workspaceElement, activationPromise;
+  let editor, editorView, fixtureFileName;
 
   beforeEach(() => {
-    workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('ror-refactor');
+    jasmine.attachToDOM(atom.views.getView(atom.workspace));
+
+    atom.packages.activatePackage('language-ruby');
+    atom.packages.activatePackage('ror-refactor');
   });
 
   describe('when the ror-refactor:toggle event is triggered', () => {
-    it('hides and shows the modal panel', () => {
-      // Before the activation event the view is not on the DOM, and no panel
-      // has been created
-      expect(workspaceElement.querySelector('.ror-refactor')).not.toExist();
-
-      // This is an activation event, triggering it will cause the package to be
-      // activated.
-      atom.commands.dispatch(workspaceElement, 'ror-refactor:toggle');
-
+    beforeEach(() => {
       waitsForPromise(() => {
-        return activationPromise;
+        return atom.workspace.open(__dirname + '/fixtures/extract_method_1.rb');
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.ror-refactor')).toExist();
-
-        let rorRefactorElement = workspaceElement.querySelector('.ror-refactor');
-        expect(rorRefactorElement).toExist();
-
-        let rorRefactorPanel = atom.workspace.panelForItem(rorRefactorElement);
-        expect(rorRefactorPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'ror-refactor:toggle');
-        expect(rorRefactorPanel.isVisible()).toBe(false);
+        editor = atom.workspace.getActiveTextEditor();
+        editorView = atom.views.getView(editor);
       });
     });
 
-    it('hides and shows the view', () => {
-      // This test shows you an integration test testing at the view level.
+    it('hides and shows the modal panel', () => {
+      // Move cursor at the begining of the first line to be refactored
+      editor.setCursorBufferPosition([3, 0]);
+      // Select the entire line
+      editor.selectLinesContainingCursors();
+      // Select the next lines to refactored
+      editor.selectDown(4);
 
-      // Attaching the workspaceElement to the DOM is required to allow the
-      // `toBeVisible()` matchers to work. Anything testing visibility or focus
-      // requires that the workspaceElement is on the DOM. Tests that attach the
-      // workspaceElement to the DOM are generally slower than those off DOM.
-      jasmine.attachToDOM(workspaceElement);
+      atom.commands.dispatch(editorView, 'ror-refactor:extract-method');
 
-      expect(workspaceElement.querySelector('.ror-refactor')).not.toExist();
+      let expectedResult = fs.readFileSync(__dirname + '/fixtures/extract_method_1_expected.rb', 'utf8');
+      expect(editor.getText()).toEqual(expectedResult);
+    });
+  });
 
-      // This is an activation event, triggering it causes the package to be
-      // activated.
-      atom.commands.dispatch(workspaceElement, 'ror-refactor:toggle');
-
+  describe('with comments on top of the method', () => {
+    beforeEach(() => {
       waitsForPromise(() => {
-        return activationPromise;
+        return atom.workspace.open(__dirname + '/fixtures/extract_method_2.rb');
       });
 
       runs(() => {
-        // Now we can test for view visibility
-        let rorRefactorElement = workspaceElement.querySelector('.ror-refactor');
-        expect(rorRefactorElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'ror-refactor:toggle');
-        expect(rorRefactorElement).not.toBeVisible();
+        editor = atom.workspace.getActiveTextEditor();
+        editorView = atom.views.getView(editor);
       });
+    });
+
+    it('should create the new method on top of the comments', () => {
+      // Move cursor at the begining of the first line to be refactored
+      editor.setCursorBufferPosition([6, 0]);
+      // Select the entire line
+      editor.selectLinesContainingCursors();
+      // Select the next lines to refactored
+      editor.selectDown(4);
+
+      atom.commands.dispatch(editorView, 'ror-refactor:extract-method');
+
+      let expectedResult = fs.readFileSync(__dirname + '/fixtures/extract_method_2_expected.rb', 'utf8');
+      expect(editor.getText()).toEqual(expectedResult);
+    });
+  });
+
+  describe('with code on top of the method', () => {
+    beforeEach(() => {
+      waitsForPromise(() => {
+        return atom.workspace.open(__dirname + '/fixtures/extract_method_3.rb');
+      });
+
+      runs(() => {
+        editor = atom.workspace.getActiveTextEditor();
+        editorView = atom.views.getView(editor);
+      });
+    });
+
+    it('should create the new method between the code and the current method', () => {
+      // Move cursor at the begining of the first line to be refactored
+      editor.setCursorBufferPosition([3, 0]);
+      // Select the entire line
+      editor.selectLinesContainingCursors();
+      // Select the next lines to refactored
+      editor.selectDown(4);
+
+      atom.commands.dispatch(editorView, 'ror-refactor:extract-method');
+
+      let expectedResult = fs.readFileSync(__dirname + '/fixtures/extract_method_3_expected.rb', 'utf8');
+      expect(editor.getText()).toEqual(expectedResult);
     });
   });
 });
