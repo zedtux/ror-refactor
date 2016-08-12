@@ -1,5 +1,6 @@
 class ExtractMethod
   belongs_to :user
+  default_scope { where(soft_deleted: false) }
   
   def 
     user = User.find(user_id)

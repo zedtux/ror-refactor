@@ -86,7 +86,7 @@ describe('RorRefactor', () => {
 
     it('should create the new method between the code and the current method', () => {
       // Move cursor at the begining of the first line to be refactored
-      editor.setCursorBufferPosition([3, 0]);
+      editor.setCursorBufferPosition([4, 0]);
       // Select the entire line
       editor.selectLinesContainingCursors();
       // Select the next lines to refactored

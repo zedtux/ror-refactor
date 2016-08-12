@@ -1,5 +1,6 @@
 class ExtractMethod
   belongs_to :user
+  default_scope { where(soft_deleted: false) }
   def my_too_long_method
     user = User.find(user_id)
     user.is_admin = true
