@@ -1,7 +1,8 @@
 # Ruby On Rails Refactor package
 
-A set of refactoring tools for Ruby On Rails.
-It should ease your life.
+A set of refactoring tools for Ruby On Rails. It should ease your life.
+
+[![Build Status](https://travis-ci.org/zedtux/ror-refactor.svg?branch=master)](https://travis-ci.org/zedtux/ror-refactor)
 
 ## Refactoring tools
 
