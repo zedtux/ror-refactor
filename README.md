@@ -26,7 +26,7 @@ Or from Atom itself.
 
 Select a bunch of code then hit `CTRL + ALT + CMD + R`:
 
-![ror-refactor-extract-method](https://cloud.githubusercontent.com/assets/478564/17524050/2c1a4904-5e5d-11e6-9716-7f783ea37386.gif)
+![ror-refactor-extract-method](https://cloud.githubusercontent.com/assets/478564/17622508/19844a66-609b-11e6-8fec-6fa7dfa42bb1.gif)
 
 ## Contributing
 
