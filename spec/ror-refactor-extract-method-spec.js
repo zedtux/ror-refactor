@@ -20,7 +20,7 @@ describe('RorRefactor', () => {
     fixtureBasePath = __dirname + '/fixtures/extract-method';
   });
 
-  describe('when the ror-refactor:toggle event is triggered', () => {
+  describe('with a space on top of the method', () => {
     beforeEach(() => {
       waitsForPromise(() => {
         return atom.workspace.open(fixtureBasePath + '/extract_method_1.rb');
@@ -32,7 +32,7 @@ describe('RorRefactor', () => {
       });
     });
 
-    it('hides and shows the modal panel', () => {
+    it('should create the new method on top of the current one', () => {
       // Move cursor at the begining of the first line to be refactored
       editor.setCursorBufferPosition([3, 0]);
       // Select the entire line
