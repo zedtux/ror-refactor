@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 0.2.0 - (2016-08-16)
+
 * Extract Method - Move code in a class
 * Adds the new refactoring tool "Extract Line"
 
