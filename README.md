@@ -9,6 +9,7 @@ A set of refactoring tools for Ruby On Rails. It should ease your life.
 This lists the available refactoring tools installed by this package:
 
  - Extract Method (Move a piece of code in a new method)
+ - Extract Line (Move a piece of code line in a new method)
 
 ## Installation
 
@@ -27,6 +28,12 @@ Or from Atom itself.
 Select a bunch of code then hit `CTRL + ALT + CMD + R`:
 
 ![ror-refactor-extract-method](https://cloud.githubusercontent.com/assets/478564/17622508/19844a66-609b-11e6-8fec-6fa7dfa42bb1.gif)
+
+#### Extract Line
+
+Select a piece of code line then hit `CTRL + ALT + CMD + R`:
+
+![ror-refactor-extract-line](https://cloud.githubusercontent.com/assets/478564/17705195/d7817108-63d7-11e6-8717-e5dc996312b3.gif)
 
 ## Contributing
 
