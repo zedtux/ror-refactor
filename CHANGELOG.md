@@ -1,3 +1,7 @@
+## Unreleased
+
+* Method Extract - Move code in a class
+
 ## 0.1.2 - (2016-08-12)
 
 * Method Extract - Fixes cursors positions
