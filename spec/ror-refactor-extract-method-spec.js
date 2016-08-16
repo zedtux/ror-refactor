@@ -9,19 +9,21 @@ let fs = require('fs');
 // or `fdescribe`). Remove the `f` to unfocus the block.
 
 describe('RorRefactor', () => {
-  let editor, editorView, fixtureFileName;
+  let editor, editorView, fixtureBasePath, fixtureFileName;
 
   beforeEach(() => {
     jasmine.attachToDOM(atom.views.getView(atom.workspace));
 
     atom.packages.activatePackage('language-ruby');
     atom.packages.activatePackage('ror-refactor');
+
+    fixtureBasePath = __dirname + '/fixtures/extract-method';
   });
 
   describe('when the ror-refactor:toggle event is triggered', () => {
     beforeEach(() => {
       waitsForPromise(() => {
-        return atom.workspace.open(__dirname + '/fixtures/extract_method_1.rb');
+        return atom.workspace.open(fixtureBasePath + '/extract_method_1.rb');
       });
 
       runs(() => {
@@ -43,7 +45,7 @@ describe('RorRefactor', () => {
       /*
        * Testing extracted code
        */
-      let expectedResult = fs.readFileSync(__dirname + '/fixtures/extract_method_1_expected.rb', 'utf8');
+      let expectedResult = fs.readFileSync(fixtureBasePath + '/extract_method_1_expected.rb', 'utf8');
       expect(editor.getText()).toEqual(expectedResult);
 
       /*
@@ -65,7 +67,7 @@ describe('RorRefactor', () => {
   describe('with comments on top of the method', () => {
     beforeEach(() => {
       waitsForPromise(() => {
-        return atom.workspace.open(__dirname + '/fixtures/extract_method_2.rb');
+        return atom.workspace.open(fixtureBasePath + '/extract_method_2.rb');
       });
 
       runs(() => {
@@ -87,7 +89,7 @@ describe('RorRefactor', () => {
       /*
        * Testing extracted code
        */
-      let expectedResult = fs.readFileSync(__dirname + '/fixtures/extract_method_2_expected.rb', 'utf8');
+      let expectedResult = fs.readFileSync(fixtureBasePath + '/extract_method_2_expected.rb', 'utf8');
       expect(editor.getText()).toEqual(expectedResult);
 
       /*
@@ -109,7 +111,7 @@ describe('RorRefactor', () => {
   describe('with code on top of the method', () => {
     beforeEach(() => {
       waitsForPromise(() => {
-        return atom.workspace.open(__dirname + '/fixtures/extract_method_3.rb');
+        return atom.workspace.open(fixtureBasePath + '/extract_method_3.rb');
       });
 
       runs(() => {
@@ -131,7 +133,7 @@ describe('RorRefactor', () => {
       /*
        * Testing extracted code
        */
-      let expectedResult = fs.readFileSync(__dirname + '/fixtures/extract_method_3_expected.rb', 'utf8');
+      let expectedResult = fs.readFileSync(fixtureBasePath + '/extract_method_3_expected.rb', 'utf8');
       expect(editor.getText()).toEqual(expectedResult);
 
       /*
