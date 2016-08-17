@@ -3,7 +3,7 @@
     "atom-text-editor": [
       {
         "label": "ROR Refactor: Extract Method",
-        "command": "ror-refactor:extract-method"
+        "command": "ror-refactor:extract-code"
       }
     ]
   },
@@ -16,7 +16,7 @@
           "submenu": [
             {
               "label": "Extract Method",
-              "command": "ror-refactor:extract-method"
+              "command": "ror-refactor:extract-code"
             }
           ]
         }

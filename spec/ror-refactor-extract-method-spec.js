@@ -41,7 +41,7 @@ describe('RorRefactor', () => {
         // Select the next lines to refactored
         editor.selectDown(4);
 
-        atom.commands.dispatch(editorView, 'ror-refactor:extract-method');
+        atom.commands.dispatch(editorView, 'ror-refactor:extract-code');
 
         /*
          * Testing extracted code
@@ -85,7 +85,7 @@ describe('RorRefactor', () => {
         // Select the next lines to refactored
         editor.selectDown(4);
 
-        atom.commands.dispatch(editorView, 'ror-refactor:extract-method');
+        atom.commands.dispatch(editorView, 'ror-refactor:extract-code');
 
         /*
          * Testing extracted code
@@ -129,7 +129,7 @@ describe('RorRefactor', () => {
         // Select the next lines to refactored
         editor.selectDown(4);
 
-        atom.commands.dispatch(editorView, 'ror-refactor:extract-method');
+        atom.commands.dispatch(editorView, 'ror-refactor:extract-code');
 
         /*
          * Testing extracted code

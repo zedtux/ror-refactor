@@ -38,7 +38,7 @@ describe('RorRefactor', () => {
         editor.setCursorBufferPosition([3, 43]);
         editor.selectRight(45);
 
-        atom.commands.dispatch(editorView, 'ror-refactor:extract-method');
+        atom.commands.dispatch(editorView, 'ror-refactor:extract-code');
 
         /*
          * Testing extracted code

@@ -10,7 +10,7 @@
   ],
   "activationCommands": {
     "atom-text-editor": [
-      "ror-refactor:extract-method"
+      "ror-refactor:extract-code"
     ]
   },
   "repository": "https://github.com/zedtux/ror-refactor",
