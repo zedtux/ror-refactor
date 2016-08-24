@@ -1,7 +1,7 @@
 {
   "name": "ror-refactor",
   "main": "./lib/ror-refactor",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A set of refactoring tools for Ruby On Rails",
   "keywords": [
     "refactor",

@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 0.3.0 - (2016-08-24)
+
+* Adds the new refactoring tool "Extract Service"
+
 ## 0.2.0 - (2016-08-16)
 
 * Extract Method - Move code in a class
