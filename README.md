@@ -10,6 +10,7 @@ This lists the available refactoring tools installed by this package:
 
  - Extract Method (Move a piece of code in a new method)
  - Extract Line (Move a piece of code line in a new method)
+ - Extract Service (Move methods in a new Class)
 
 ## Installation
 
@@ -34,6 +35,12 @@ Select a bunch of code then hit `CTRL + ALT + CMD + R`:
 Select a piece of code line then hit `CTRL + ALT + CMD + R`:
 
 ![ror-refactor-extract-line](https://cloud.githubusercontent.com/assets/478564/17705195/d7817108-63d7-11e6-8717-e5dc996312b3.gif)
+
+#### Extract Service
+
+Select a bunch of methods to move in a new class then hit `CTRL + ALT + CMD + R`:
+
+![ror-refactor-extract-service](https://cloud.githubusercontent.com/assets/478564/17926623/1dffdc30-69f2-11e6-8066-173dee88a4c9.gif)
 
 ## Contributing
 

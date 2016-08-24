@@ -56,7 +56,7 @@ describe('RorRefactor', () => {
         expect(cursors.length).toBe(2);
 
         // Sort cursors by row position
-        cursors = cursors.sort(function(a, b) { return a.row > b.row; });
+        cursors = cursors.sort((a, b) => { return a.row > b.row; });
 
         // Check new method cursor position
         expect(cursors[0]).toEqual({ row: 2, column: 6 });
@@ -100,7 +100,7 @@ describe('RorRefactor', () => {
         expect(cursors.length).toBe(2);
 
         // Sort cursors by row position
-        cursors = cursors.sort(function(a, b) { return a.row > b.row; });
+        cursors = cursors.sort((a, b) => { return a.row > b.row; });
 
         // Check new method cursor position
         expect(cursors[0]).toEqual({ row: 2, column: 6 });
@@ -144,7 +144,7 @@ describe('RorRefactor', () => {
         expect(cursors.length).toBe(2);
 
         // Sort cursors by row position
-        cursors = cursors.sort(function(a, b) { return a.row > b.row; });
+        cursors = cursors.sort((a, b) => { return a.row > b.row; });
 
         // Check new method cursor position
         expect(cursors[0]).toEqual({ row: 4, column: 6 });
