@@ -19,5 +19,17 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+  },
+  "configSchema": {
+    "serviceType": {
+      "title": "Service extract template",
+      "description": "Select the template to be used when you refactor some methodes as a new service.",
+      "type": "string",
+      "default": "poro",
+      "enum": [
+        { "value": "poro", "description": "PORO (Plain Old Ruby Object)" },
+        { "value": "interactor", "description": "Interactor gem" }
+      ]
+    }
   }
 }
