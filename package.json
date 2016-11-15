@@ -29,7 +29,22 @@
       "enum": [
         { "value": "poro", "description": "PORO (Plain Old Ruby Object)" },
         { "value": "interactor", "description": "Interactor gem" }
-      ]
+      ],
+      "order": 1
+    },
+    "servicePath": {
+      "title": "Services path",
+      "description": "Fill in with the path within your Rails project where the servies should be saved. Let it empty in order to use the default path (PORO: app/services/, Interactor: app/interactors/)",
+      "type": "string",
+      "default": "",
+      "order": 2
+    },
+    "serviceAdditionnalModule": {
+      "title": "Service additionnal module",
+      "description": "Fill in with the name of a module that your services should always include. Keep it empty in order to not import any module (For the Interactor service, the `Interactor` module is always included)",
+      "type": "string",
+      "default": "",
+      "order": 3
     }
   }
 }

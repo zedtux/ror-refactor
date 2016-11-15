@@ -1,5 +1,8 @@
 ## Unreleased
 
+* Adds a configuration field in order to set the created services path
+* Adds a configuration field in order to the name of a module to be included in created services
+
 ## 0.3.0 - (2016-08-24)
 
 * Adds the new refactoring tool "Extract Service"
