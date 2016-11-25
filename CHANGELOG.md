@@ -1,8 +1,10 @@
 ## Unreleased
 
-* Adds a configuration field in order to set the created services path
-* Adds a configuration field in order to the name of a module to be included in created services
-* Handle namespaces in service class names
+## 0.3.1 - (2016-11-25)
+
+* Adds a configuration field in order to set the created services path ([#1](https://github.com/zedtux/ror-refactor/issues/1))
+* Adds a configuration field in order to the name of a module to be included in created services ([#1](https://github.com/zedtux/ror-refactor/issues/1))
+* Handle namespaces in service class names ([#1](https://github.com/zedtux/ror-refactor/issues/1))
 
 ## 0.3.0 - (2016-08-24)
 
