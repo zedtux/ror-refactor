@@ -42,6 +42,11 @@ Select a bunch of methods to move in a new class then hit `CTRL + ALT + CMD + R`
 
 ![ror-refactor-extract-service](https://cloud.githubusercontent.com/assets/478564/17926623/1dffdc30-69f2-11e6-8066-173dee88a4c9.gif)
 
+You can specify the following options:
+
+![ror-refactor-extract-service-options](https://cloud.githubusercontent.com/assets/478564/20620846/05cbb3a2-b2fc-11e6-832b-791b5b32b6d5.png)
+
+
 ## Contributing
 
 1. Fork it
