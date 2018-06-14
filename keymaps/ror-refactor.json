@@ -1,5 +1,0 @@
-{
-  "atom-workspace": {
-    "ctrl-alt-cmd-r": "ror-refactor:extract-code"
-  }
-}
